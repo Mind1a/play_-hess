@@ -1,5 +1,5 @@
-@import './utils/mixins';
-@import './utils/variables';
+@import "./utils/mixins";
+@import "./utils/variables";
 
 .section_about_project {
   @include display_flex(center, center);
@@ -104,6 +104,21 @@
         line-height: 1.313rem;
         display: none;
       }
+
+      transition: margin-top 0.5s ease;
+
+      #second-part {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: height 0.5s ease, opacity 0.5s ease; // Transition height and opacity
+
+        &.visible {
+          height: auto;
+          opacity: 1;
+        }
+      }
+
       .hidden {
         display: none;
       }
