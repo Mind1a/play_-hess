@@ -176,8 +176,8 @@ table {
 }
 @media screen and (max-width: 64rem) {
   * .slider .swiper {
-    width: 37.75rem;
-    height: 18.813rem;
+    width: 44.5rem;
+    height: 22rem;
   }
 }
 @media screen and (max-width: 30rem) {
@@ -441,25 +441,25 @@ footer .footer-container .footer-text {
     line-height: 0.625rem;
   }
 }
-footer .footer-container .footer-text span {
+footer .footer-container .footer-text a {
   color: #1d1e4a;
   font-weight: 600;
   line-height: 2.04rem;
 }
 @media screen and (max-width: 80rem) {
-  footer .footer-container .footer-text span {
+  footer .footer-container .footer-text a {
     font-size: 1.25rem;
     line-height: 1.688rem;
   }
 }
 @media screen and (max-width: 64rem) {
-  footer .footer-container .footer-text span {
+  footer .footer-container .footer-text a {
     font-size: 1rem;
     line-height: 1.313rem;
   }
 }
 @media screen and (max-width: 30rem) {
-  footer .footer-container .footer-text span {
+  footer .footer-container .footer-text a {
     font-size: 0.5rem;
     line-height: 0.625rem;
   }
@@ -500,7 +500,7 @@ footer .footer-container .footer-text span {
 }
 @media screen and (max-width: 64rem) {
   .how-to-use-app .how-to-use-app-childe {
-    max-width: 604px;
+    max-width: 715px;
   }
 }
 @media screen and (max-width: 30rem) {
@@ -636,6 +636,7 @@ footer .footer-container .footer-text span {
 }
 
 .project-working-group-main {
+  display: none;
   width: 100%;
   margin: auto;
   padding-left: 3.75rem;
@@ -817,12 +818,13 @@ footer .footer-container .footer-text span {
 .workers-slider {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 3.75rem;
+  padding-right: 3.75rem;
 }
 @media screen and (min-width: 1025px) {
   .workers-slider {
-    display: none;
+    display: flex;
+    flex-direction: row;
   }
 }
 @media screen and (max-width: 30rem) {
@@ -832,8 +834,18 @@ footer .footer-container .footer-text span {
   }
 }
 .workers-slider .swiper-workers-section {
-  max-width: 610px;
+  max-width: 1380px;
   min-height: 210px;
+}
+@media screen and (max-width: 80rem) {
+  .workers-slider .swiper-workers-section {
+    max-width: 1000px;
+  }
+}
+@media screen and (max-width: 64rem) {
+  .workers-slider .swiper-workers-section {
+    max-width: 715px;
+  }
 }
 @media screen and (max-width: 30rem) {
   .workers-slider .swiper-workers-section {
@@ -893,11 +905,6 @@ footer .footer-container .footer-text span {
   flex-direction: column;
   padding-left: 3.125rem;
   margin-right: 0px;
-}
-@media screen and (min-width: 1025px) {
-  .workers-slider .swiper-workers-section .swiper-wrapper-workers-card .swiper-slide-workers-card {
-    display: none;
-  }
 }
 @media screen and (max-width: 1025px) {
   .workers-slider .swiper-workers-section .swiper-wrapper-workers-card .swiper-slide-workers-card {
@@ -1189,7 +1196,7 @@ footer .footer-container .footer-text span {
 }
 @media screen and (max-width: 64rem) {
   .section_about_project {
-    max-width: 687.6px;
+    max-width: 830px;
     min-height: 540px;
     background-position: left 30px bottom 0px, right 30px bottom, left 8px top 0px;
     background-size: 145px 228px, 145px 228px, 100px 70px;
@@ -1226,7 +1233,7 @@ footer .footer-container .footer-text span {
 @media screen and (max-width: 64rem) {
   .section_about_project .text_section {
     min-height: 250px;
-    max-width: 606px;
+    max-width: 750px;
   }
 }
 @media screen and (max-width: 30rem) {
@@ -1308,6 +1315,9 @@ footer .footer-container .footer-text span {
     line-height: 1.313rem;
   }
 }
+.section_about_project .text_section .see-more {
+  transition: margin-top 0.5s ease;
+}
 @media screen and (max-width: 30rem) {
   .section_about_project .text_section .see-more {
     color: #252525;
@@ -1324,6 +1334,16 @@ footer .footer-container .footer-text span {
     line-height: 1.313rem;
     display: none;
   }
+}
+.section_about_project .text_section .see-more #second-part {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: height 0.5s ease, opacity 0.5s ease;
+}
+.section_about_project .text_section .see-more #second-part.visible {
+  height: auto;
+  opacity: 1;
 }
 .section_about_project .text_section .see-more .hidden {
   display: none;
