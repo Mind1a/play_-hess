@@ -61,19 +61,22 @@ function switchPage(pageNumber) {
 }
 
 // Function to handle burger menu button click event
+const burgerMenu = document.querySelector(".popup-conteiner");
+const overlay = document.querySelector(".overlay");
+const body = document.querySelector("body");
 function handleBurgerMenuClick() {
-  const burgerMenu = document.querySelector(".popup-conteiner");
-  const overlay = document.querySelector(".overlay");
   burgerMenu.style.display = "flex";
+  // burgerMenu.classList.toggle("active");
   overlay.style.display = "block";
+  burgerMenu.classList.toggle("active");
+  body.classList.toggle("no-scroll");
 }
 
 // Function to handle close button click event
 function handleCloseButtonClick() {
-  const burgerMenu = document.querySelector(".popup-conteiner");
-  const overlay = document.querySelector(".overlay");
   burgerMenu.style.display = "none";
   overlay.style.display = "none";
+  body.classList.remove("no-scroll");
 }
 
 // Add event listeners
@@ -84,6 +87,7 @@ document
   .querySelector(".close_button")
   .addEventListener("click", handleCloseButtonClick);
 window.addEventListener("resize", updateActiveClass);
+overlay.addEventListener("click", handleCloseButtonClick);
 
 // Add event listeners for page navigation
 [".navbtn", ".navbtn-popup"].forEach((selector) => {

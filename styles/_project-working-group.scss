@@ -2,6 +2,7 @@
 @import "./utils/variables";
 
 .project-working-group-main {
+  display: none;
   width: 100%;
   margin: auto;
   padding-left: 3.75rem;
@@ -125,18 +126,26 @@
 .workers-slider {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 3.75rem;
+  padding-right: 3.75rem;
   @media screen and (min-width: 1025px) {
-    display: none;
+    display: flex;
+    flex-direction: row;
   }
   @media screen and (max-width: $mobile) {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
   .swiper-workers-section {
-    max-width: 610px;
+    max-width: 1380px;
     min-height: 210px;
+
+    @media screen and (max-width: $macbook) {
+      max-width: 1000px;
+    }
+    @media screen and (max-width: $tablet) {
+      max-width: 715px;
+    }
     @media screen and (max-width: $mobile) {
       max-width: 266px;
       min-height: 190px;
@@ -162,7 +171,7 @@
         margin-right: 0px;
 
         @media screen and (min-width: 1025px) {
-          display: none;
+          // display: none;
         }
         @media screen and (max-width: 1025px) {
           max-width: 18.25rem;
