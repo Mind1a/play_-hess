@@ -1505,16 +1505,16 @@ header .header_part .menu {
     margin-right: 3.125rem;
   }
 }
+@media screen and (max-width: 768px) {
+  header .header_part .menu {
+    display: none;
+  }
+}
 @media screen and (max-width: 64rem) {
   header .header_part .menu {
     width: 20rem;
     height: 2.938rem;
     margin-right: 2rem;
-  }
-}
-@media screen and (max-width: 30rem) {
-  header .header_part .menu {
-    display: none;
   }
 }
 header .header_part .menu .about_project {
@@ -1589,7 +1589,7 @@ header .header_part .menu button {
 header .header_part .menu .active {
   background-color: #1d1e4a;
 }
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 768px) {
   header .burger-menu {
     display: none;
   }
@@ -1604,7 +1604,12 @@ header .burger-menu button img {
   width: 1.5rem;
   height: 1.5rem;
   color: #1d1e4a;
-  margin-right: 0.625rem;
+  margin-right: 1.5rem;
+}
+@media screen and (max-width: 30rem) {
+  header .burger-menu button img {
+    margin-right: 0.625rem;
+  }
 }
 header .burger-menu .popup-conteiner {
   width: 13.813rem;

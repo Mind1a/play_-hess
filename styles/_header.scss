@@ -70,13 +70,16 @@ header {
         height: 4.063rem;
         margin-right: 3.125rem;
       }
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
       @media screen and (max-width: $tablet) {
         width: 20rem;
         height: 2.938rem;
         margin-right: 2rem;
       }
       @media screen and (max-width: $mobile) {
-        display: none;
+        // display: none;
       }
 
       .about_project {
@@ -133,7 +136,7 @@ header {
   }
 
   .burger-menu {
-    @media screen and (min-width: 481px) {
+    @media screen and (min-width: 768px) {
       display: none;
     }
     button {
@@ -143,7 +146,13 @@ header {
         width: 1.5rem;
         height: 1.5rem;
         color: $hoverColor;
-        margin-right: 0.625rem;
+        margin-right: 1.5rem;
+      }
+
+      @media screen and (max-width: $mobile) {
+        img {
+          margin-right: 0.625rem;
+        }
       }
     }
     .popup-conteiner {
