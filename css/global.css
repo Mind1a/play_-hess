@@ -1589,6 +1589,9 @@ header .header_part .menu button {
 header .header_part .menu .active {
   background-color: #1d1e4a;
 }
+header .burger-menu {
+  position: relative;
+}
 @media screen and (min-width: 768px) {
   header .burger-menu {
     display: none;
@@ -1604,10 +1607,40 @@ header .burger-menu button img {
   width: 1.5rem;
   height: 1.5rem;
   color: #1d1e4a;
+}
+header .burger-menu .menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  color: #1d1e4a;
   margin-right: 1.5rem;
 }
+header .burger-menu .menu-btn .menu-btn__burger {
+  width: 1.5rem;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #1d1e4a;
+}
+header .burger-menu .menu-btn .menu-btn__burger::before, header .burger-menu .menu-btn .menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 4px;
+  background-color: #1d1e4a;
+  border-radius: 5px;
+}
+header .burger-menu .menu-btn .menu-btn__burger::before {
+  transform: translateY(-8px);
+}
+header .burger-menu .menu-btn .menu-btn__burger::after {
+  transform: translateY(8px);
+}
 @media screen and (max-width: 30rem) {
-  header .burger-menu button img {
+  header .burger-menu .menu-btn {
     margin-right: 0.625rem;
   }
 }
@@ -1619,12 +1652,15 @@ header .burger-menu .popup-conteiner {
   flex-direction: column;
   align-items: center;
   border-radius: 0.313rem;
-  position: relative;
+  position: absolute;
   display: none;
-  top: 3.25rem;
-  right: 0rem;
+  top: -8px;
+  right: 0;
   z-index: 1000;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+header .burger-menu .popup-conteiner.active {
+  top: -8px;
 }
 header .burger-menu .popup-conteiner .about_project {
   padding: 0;
@@ -1679,6 +1715,23 @@ header .burger-menu .popup-conteiner .close_button img {
 }
 header .burger-menu .popup-conteiner .active-popup {
   background-color: #1d1e4a;
+}
+header .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1;
+}
+header .overlay.active {
+  display: block;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 body {

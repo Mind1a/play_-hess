@@ -136,6 +136,7 @@ header {
   }
 
   .burger-menu {
+    position: relative;
     @media screen and (min-width: 768px) {
       display: none;
     }
@@ -146,13 +147,47 @@ header {
         width: 1.5rem;
         height: 1.5rem;
         color: $hoverColor;
-        margin-right: 1.5rem;
       }
+    }
+    .menu-btn {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      cursor: pointer;
+      color: $hoverColor;
+      margin-right: 1.5rem;
 
-      @media screen and (max-width: $mobile) {
-        img {
-          margin-right: 0.625rem;
+      .menu-btn__burger {
+        width: 1.5rem;
+        height: 4px;
+        border-radius: 5px;
+        background-color: $hoverColor;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 1.5rem;
+          height: 4px;
+          background-color: $hoverColor;
+          border-radius: 5px;
         }
+
+        &::before {
+          transform: translateY(-8px);
+        }
+
+        &::after {
+          transform: translateY(8px);
+        }
+      }
+    }
+    @media screen and (max-width: $mobile) {
+      .menu-btn {
+        margin-right: 0.625rem;
       }
     }
     .popup-conteiner {
@@ -163,13 +198,17 @@ header {
       flex-direction: column;
       align-items: center;
       border-radius: 0.313rem;
-      position: relative;
+      position: absolute;
       display: none;
-      top: 3.25rem;
-      right: 0rem;
+      top: -8px;
+      right: 0;
       z-index: 1000;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
         rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+      &.active {
+        top: -8px;
+      }
 
       .about_project {
         @include button_no_decor;
@@ -211,4 +250,22 @@ header {
       }
     }
   }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
