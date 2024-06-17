@@ -1651,6 +1651,7 @@ header .burger-menu .popup-conteiner {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 0.313rem;
   position: absolute;
   display: none;
@@ -1661,6 +1662,16 @@ header .burger-menu .popup-conteiner {
 }
 header .burger-menu .popup-conteiner.active {
   top: -8px;
+}
+@media screen and (min-width: 30rem) {
+  header .burger-menu .popup-conteiner {
+    width: 16rem;
+    height: 12rem;
+    top: -25px;
+  }
+  header .burger-menu .popup-conteiner.active {
+    top: -25px;
+  }
 }
 header .burger-menu .popup-conteiner .about_project {
   padding: 0;
@@ -1677,7 +1688,6 @@ header .burger-menu .popup-conteiner .about_project {
   font-family: "Noto Sans Georgian", sans-serif;
   font-size: 0.75rem;
   color: #ffffff;
-  margin-top: 2.5rem;
 }
 header .burger-menu .popup-conteiner .about_project:hover {
   transition-duration: 0.5s;
@@ -1713,6 +1723,12 @@ header .burger-menu .popup-conteiner .close_button img {
   width: 1.5rem;
   height: 1.5rem;
 }
+@media screen and (min-width: 30rem) {
+  header .burger-menu .popup-conteiner .close_button {
+    right: 1.8em;
+    top: 1.9em;
+  }
+}
 header .burger-menu .popup-conteiner .active-popup {
   background-color: #1d1e4a;
 }
@@ -1722,7 +1738,7 @@ header .overlay {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   display: none;
   z-index: 1;
 }

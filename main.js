@@ -72,8 +72,8 @@ function handleBurgerMenuClick() {
   body.classList.toggle("no-scroll");
 }
 
-// Function to handle close button click event
-function handleCloseButtonClick() {
+// Function to handle pop up close event
+function handlePopUpClose() {
   burgerMenu.style.display = "none";
   overlay.style.display = "none";
   body.classList.remove("no-scroll");
@@ -85,14 +85,17 @@ document
   .addEventListener("click", handleBurgerMenuClick);
 document
   .querySelector(".close_button")
-  .addEventListener("click", handleCloseButtonClick);
+  .addEventListener("click", handlePopUpClose);
 window.addEventListener("resize", updateActiveClass);
-overlay.addEventListener("click", handleCloseButtonClick);
+overlay.addEventListener("click", handlePopUpClose);
 
 // Add event listeners for page navigation
 [".navbtn", ".navbtn-popup"].forEach((selector) => {
   document.querySelectorAll(selector).forEach((button, index) => {
-    button.addEventListener("click", () => switchPage(index + 1));
+    button.addEventListener("click", () => {
+      switchPage(index + 1);
+      handlePopUpClose();
+    });
   });
 });
 
