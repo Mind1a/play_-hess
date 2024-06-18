@@ -10,22 +10,49 @@ const swiper_for_img = new Swiper(".swiper-for-img", {
   },
 });
 
+// const swiper = new Swiper(".swiper-workers-section", {
+//   speed: 400,
+//   spaceBetween: 10,
+//   slidesPerView: "auto",
+//   on: {
+//     reachEnd: function () {
+//       this.allowSlideNext = false;
+//     },
+//     reachBeginning: function () {
+//       this.allowSlideNext = true;
+//     },
+//     slideChange: function () {
+//       this.allowSlidePrev = !this.isBeginning;
+//       this.allowSlideNext = !this.isEnd;
+//     },
+//   },
+// });
+
 const swiper = new Swiper(".swiper-workers-section", {
+  direction: "horizontal",
   speed: 400,
   spaceBetween: 10,
-  slidesPerView: "auto",
-  on: {
-    reachEnd: function () {
-      this.allowSlideNext = false;
+  loop: true,
+  slidesPerView: 1,
+
+  navigation: {
+    nextEl: ".button-next",
+    prevEl: ".button-prev",
+  },
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 20,
     },
-    reachBeginning: function () {
-      this.allowSlideNext = true;
-    },
-    slideChange: function () {
-      this.allowSlidePrev = !this.isBeginning;
-      this.allowSlideNext = !this.isEnd;
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 30,
     },
   },
+});
+
+window.addEventListener("resize", function () {
+  swiper.update();
 });
 
 // Global variable to keep track of the active page
