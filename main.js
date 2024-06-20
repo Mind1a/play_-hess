@@ -75,8 +75,7 @@ const burgerMenu = document.querySelector(".popup-conteiner");
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 function handleBurgerMenuClick() {
-  burgerMenu.style.display = "flex";
-  // burgerMenu.classList.toggle("active");
+  burgerMenu.style.visibility = "visible"
   overlay.style.display = "block";
   burgerMenu.classList.toggle("active");
   body.classList.toggle("no-scroll");
@@ -84,7 +83,8 @@ function handleBurgerMenuClick() {
 
 // Function to handle pop up close event
 function handlePopUpClose() {
-  burgerMenu.style.display = "none";
+  burgerMenu.style.visibility = "hidden"
+  burgerMenu.classList.toggle("active");
   overlay.style.display = "none";
   body.classList.remove("no-scroll");
 }
@@ -93,7 +93,7 @@ function handlePopUpClose() {
 window.addEventListener( 'resize' , () => {
   if(window.innerWidth > 768){
     overlay.style.display = "none";
-  } else if(burgerMenu.style.display == "flex"){
+  } else if(burgerMenu.style.visibility == "visible"){
     overlay.style.display = "block";
   }
 })

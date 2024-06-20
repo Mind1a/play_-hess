@@ -191,8 +191,8 @@ header {
     }
 
     .popup-conteiner {
-      width: 13.813rem;
-      height: 8.75rem;
+      width: 0;
+      height: 0;
       background-color: $mainColor;
       display: flex;
       flex-direction: column;
@@ -200,25 +200,29 @@ header {
       justify-content: center;
       border-radius: 0.313rem;
       position: absolute;
-      display: none;
-      top: -8px;
-      right: 0;
+      visibility: hidden;
+      top: -8000px;
+      right: 300px;
       z-index: 1000;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
         rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
       &.active {
+        width: 13.813rem;
         top: -8px;
+        right: 0;
+        height: 8.75rem;
+        visibility: visible;
+        transition: height 2s , visible 0s;
       }
 
       @media screen and (min-width: $mobile) {
-        width: 16rem;
-        height: 12rem;
-
-        top: -25px;
+        // top: -25px;
 
         &.active {
           top: -25px;
+          width: 16rem;
+          height: 12rem;
         }
       }
 
