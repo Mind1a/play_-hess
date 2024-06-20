@@ -89,6 +89,17 @@ function handlePopUpClose() {
   body.classList.remove("no-scroll");
 }
 
+// handle overlay disappearing on screen size change
+window.addEventListener( 'resize' , () => {
+  if(window.innerWidth > 768){
+    overlay.style.display = "none";
+  } else if(burgerMenu.style.display == "flex"){
+    overlay.style.display = "block";
+  }
+})
+
+
+
 // Add event listeners
 document
   .querySelector("#menuIcon")
