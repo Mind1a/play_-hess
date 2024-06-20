@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     if (window.innerWidth >= 481) {
       resetText();
+      toggleText();
     }
   });
 

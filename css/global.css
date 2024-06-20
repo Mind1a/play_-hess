@@ -1365,17 +1365,19 @@ footer .footer-container .footer-text a {
   }
 }
 .section_about_project .text_section .see-more #second-part {
-  height: 0;
+  max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s 2s;
 }
 .section_about_project .text_section .see-more #second-part.visible {
-  height: auto;
+  max-height: 1000px;
   opacity: 1;
+  visibility: visible;
+  transition: max-height 2s ease, opacity 2s ease, visibility 0s 0s;
 }
 .section_about_project .text_section .see-more .hidden {
-  display: none;
+  visibility: hidden;
 }
 .section_about_project .text_section .see-more button {
   width: 6.563rem;
