@@ -142,6 +142,10 @@ table {
   border-spacing: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
