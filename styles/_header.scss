@@ -137,7 +137,7 @@ header {
 
   .burger-menu {
     position: relative;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 769px) {
       display: none;
     }
     button {
@@ -184,12 +184,12 @@ header {
           transform: translateY(8px);
         }
       }
-    }
-    @media screen and (max-width: $mobile) {
-      .menu-btn {
+
+      @media screen and (max-width: $mobile) {
         margin-right: 0.625rem;
       }
     }
+
     .popup-conteiner {
       width: 13.813rem;
       height: 8.75rem;
@@ -197,6 +197,7 @@ header {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       border-radius: 0.313rem;
       position: absolute;
       display: none;
@@ -210,6 +211,17 @@ header {
         top: -8px;
       }
 
+      @media screen and (min-width: $mobile) {
+        width: 16rem;
+        height: 12rem;
+
+        top: -25px;
+
+        &.active {
+          top: -25px;
+        }
+      }
+
       .about_project {
         @include button_no_decor;
         width: 8.75rem;
@@ -221,7 +233,6 @@ header {
         font-family: "Noto Sans Georgian", sans-serif;
         font-size: 0.75rem;
         color: $menuTextcolor;
-        margin-top: 2.5rem;
       }
       .video {
         @include button_no_decor;
@@ -244,6 +255,11 @@ header {
           width: 1.5rem;
           height: 1.5rem;
         }
+
+        @media screen and (min-width: $mobile) {
+          right: 1.8em;
+          top: 1.9em;
+        }
       }
       .active-popup {
         background-color: $hoverColor;
@@ -256,7 +272,7 @@ header {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     display: none;
     z-index: 1;
 

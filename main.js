@@ -11,21 +11,31 @@ const swiper_for_img = new Swiper(".swiper-for-img", {
 });
 
 const swiper = new Swiper(".swiper-workers-section", {
+  direction: "horizontal",
   speed: 400,
   spaceBetween: 10,
-  slidesPerView: "auto",
-  on: {
-    reachEnd: function () {
-      this.allowSlideNext = false;
+  loop: true,
+  slidesPerView: 1,
+
+  navigation: {
+    nextEl: ".button-next",
+    prevEl: ".button-prev",
+  },
+
+  breakpoints: {
+    600: {
+      slidesPerView: 2,
+      spaceBetween: 20,
     },
-    reachBeginning: function () {
-      this.allowSlideNext = true;
-    },
-    slideChange: function () {
-      this.allowSlidePrev = !this.isBeginning;
-      this.allowSlideNext = !this.isEnd;
+    1025: {
+      slidesPerView: 3,
+      spaceBetween: 30,
     },
   },
+});
+
+window.addEventListener("resize", function () {
+  swiper.update();
 });
 
 // Global variable to keep track of the active page
@@ -72,8 +82,8 @@ function handleBurgerMenuClick() {
   body.classList.toggle("no-scroll");
 }
 
-// Function to handle close button click event
-function handleCloseButtonClick() {
+// Function to handle pop up close event
+function handlePopUpClose() {
   burgerMenu.style.display = "none";
   overlay.style.display = "none";
   body.classList.remove("no-scroll");
@@ -85,14 +95,17 @@ document
   .addEventListener("click", handleBurgerMenuClick);
 document
   .querySelector(".close_button")
-  .addEventListener("click", handleCloseButtonClick);
+  .addEventListener("click", handlePopUpClose);
 window.addEventListener("resize", updateActiveClass);
-overlay.addEventListener("click", handleCloseButtonClick);
+overlay.addEventListener("click", handlePopUpClose);
 
 // Add event listeners for page navigation
 [".navbtn", ".navbtn-popup"].forEach((selector) => {
   document.querySelectorAll(selector).forEach((button, index) => {
-    button.addEventListener("click", () => switchPage(index + 1));
+    button.addEventListener("click", () => {
+      switchPage(index + 1);
+      handlePopUpClose();
+    });
   });
 });
 
