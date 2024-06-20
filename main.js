@@ -10,24 +10,6 @@ const swiper_for_img = new Swiper(".swiper-for-img", {
   },
 });
 
-// const swiper = new Swiper(".swiper-workers-section", {
-//   speed: 400,
-//   spaceBetween: 10,
-//   slidesPerView: "auto",
-//   on: {
-//     reachEnd: function () {
-//       this.allowSlideNext = false;
-//     },
-//     reachBeginning: function () {
-//       this.allowSlideNext = true;
-//     },
-//     slideChange: function () {
-//       this.allowSlidePrev = !this.isBeginning;
-//       this.allowSlideNext = !this.isEnd;
-//     },
-//   },
-// });
-
 const swiper = new Swiper(".swiper-workers-section", {
   direction: "horizontal",
   speed: 400,
@@ -39,6 +21,7 @@ const swiper = new Swiper(".swiper-workers-section", {
     nextEl: ".button-next",
     prevEl: ".button-prev",
   },
+
   breakpoints: {
     600: {
       slidesPerView: 2,
