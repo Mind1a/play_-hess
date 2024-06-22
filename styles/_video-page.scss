@@ -17,83 +17,112 @@
 
   .video-section {
     max-width: 86rem;
-    // height: 44.75rem;
     border-radius: 1rem;
-    margin: auto;
+    margin: 60px auto 0;
     position: relative;
+
     @media screen and (max-width: $macbook) {
-      display: flex;
-      justify-content: center;
-      background-image: url(/img/chess-figure-group-left.svg),
-        url(/img/chess-figure-group-right.svg);
-      background-repeat: no-repeat;
-      background-position: left (30px) bottom, right (30px) bottom;
-      background-size: 200px 310px, 200px 310px;
-      height: 41.75rem;
-      max-width: 1018px;
+      margin-top: 40px;
     }
-    @media screen and (max-width: $tablet) {
-      background-position: left (20px) bottom (80px), right (20px) bottom (80px);
-      background-size: 140px 200px, 140px 200px;
-      height: 500px;
-      max-width: 600px;
-    }
+
     @media screen and (max-width: $mobile) {
-      background-position: left (20px) bottom (100px),
-        right (20px) bottom (100px);
-      background-size: 70px 100px, 70px 100px;
-      max-width: 300px;
-      height: 300px;
+      margin-top: 24px;
     }
 
-    .demo-video {
-      position: absolute;
-      max-width: 100%;
-      height: auto;
-      position: relative;
-      overflow: hidden;
-      padding-left: 3.75rem;
-      padding-right: 3.75rem;
-      margin-top: 2rem;
+    .video-container {
+      max-width: 1380px;
+      height: 774px;
+      margin: 0  auto ;
+    
+      @media screen and (max-width: 1600px) {
+        max-width: 1220px;
+      }
       @media screen and (max-width: $macbook) {
+        height: 562px;
         max-width: 1000px;
-        max-height: 407px;
-        margin-top: 2.5rem;
-
+      }
+      @media screen and (max-width: 1090px) {
+        max-width: 910px;
+      }
+      @media screen and (max-width: $tablet) {
+        height: 365px;
+        max-width: 650px;
+      }
+      @media screen and (max-width: 710px) {
+        max-width: 500px;
+        height: 281px;
+      }
+      @media screen and (max-width: 640px) {
+        max-width: 490px;
+      }
+      @media screen and (max-width: 550px) {
+        max-width: 410px;
+        height: 231px;
+      }
+      @media screen and (max-width: $mobile) {
+        max-width: 262px;
+        height:148px;
+      }
+    
+      .demo-video {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: 40px;
+    
+        @media screen and (max-width: $macbook) {
+          border-radius: 35px;
+          min-height: 408px;
+        }
         @media screen and (max-width: $tablet) {
-          max-width: 504px;
-          max-height: 231px;
-          margin-top: 2.5rem;
+          border-radius: 25px;
+          min-height: 231px;
         }
         @media screen and (max-width: $mobile) {
-          max-width: 262px;
-          max-height: 120px;
-          margin-top: 0.5rem;
-          padding-left: 0.8rem;
-          padding-right: 0.8rem;
+          border-radius: 15px;
+          min-height: 121px;
         }
       }
     }
   }
 }
 .download-app-page2 {
-  max-width: 1280px;
+  max-width: 1578px;
   height: 39.297rem;
-  margin: auto;
+  margin: 60px  auto;
   overflow: visible;
   background-image: url(/img/chess-figure-group-left.svg),
     url(/img/chess-figure-group-right.svg);
   background-repeat: no-repeat;
-  background-position: left (30px) bottom, right (30px) bottom;
+  background-position: left (100px) bottom, right (100px) bottom;
+  
   @media screen and (max-width: $macbook) {
     height: 21.5rem;
-    max-width: 1200px;
-    display: none;
+    max-width: 1218px;
+    margin: -90px auto 0;
+    background-repeat: no-repeat;
+    background-position: left (15px) bottom (40px) , right (15px) bottom (40px);
+    background-size: 200px 310px, 200px 310px;
+  }
+  @media screen and (max-width: $tablet) {
+    background-position: left (7px) bottom (40px), right (7px) bottom (40px);
+    background-size: 140px 200px, 140px 200px;
+    margin: -70px 0 0;
+    height: 240px;
+    max-width: 64rem;
+  }
+  @media screen and (max-width: $mobile) {
+    background-position: left (10px) bottom (24px),
+      right (5px) bottom (24px);
+    background-size: 70px 100px, 70px 100px;
+    margin: -20px 0 0;
+    max-width: 30rem;
+    height: 120px;
   }
 
   .video-page-download {
-    margin-bottom: 3.75rem;
     @media screen and (max-width: $macbook) {
+      display: none;
     }
     .download-app-conteiner {
       max-width: 72.25rem;
@@ -101,7 +130,6 @@
       margin: auto;
       @include display_flex(space-between);
       flex-direction: column;
-      margin-top: 3.75rem;
 
       h1 {
         @include title-text_styles($titleColor, 3rem, 700);
