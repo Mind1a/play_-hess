@@ -108,19 +108,21 @@
       transition: margin-top 0.5s ease;
 
       #second-part {
-        height: 0;
+        max-height: 0;
         opacity: 0;
         overflow: hidden;
-        transition: height 0.5s ease, opacity 0.5s ease; // Transition height and opacity
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s 2s; 
 
         &.visible {
-          height: auto;
+          max-height: 1000px;
           opacity: 1;
+          visibility: visible;
+          transition: max-height 2s ease, opacity 2s ease, visibility 0s 0s; 
         }
       }
 
       .hidden {
-        display: none;
+        visibility: hidden;
       }
       button {
         width: 6.563rem;

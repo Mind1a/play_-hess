@@ -142,6 +142,10 @@ table {
   border-spacing: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1070,89 +1074,135 @@ footer .footer-container .footer-text a {
 .video-page2 .video-section {
   max-width: 86rem;
   border-radius: 1rem;
-  margin: auto;
+  margin: 60px auto 0;
   position: relative;
 }
 @media screen and (max-width: 80rem) {
   .video-page2 .video-section {
-    display: flex;
-    justify-content: center;
-    background-image: url(/img/chess-figure-group-left.svg), url(/img/chess-figure-group-right.svg);
-    background-repeat: no-repeat;
-    background-position: left 30px bottom, right 30px bottom;
-    background-size: 200px 310px, 200px 310px;
-    height: 41.75rem;
-    max-width: 1018px;
-  }
-}
-@media screen and (max-width: 64rem) {
-  .video-page2 .video-section {
-    background-position: left 20px bottom 80px, right 20px bottom 80px;
-    background-size: 140px 200px, 140px 200px;
-    height: 500px;
-    max-width: 600px;
+    margin-top: 40px;
   }
 }
 @media screen and (max-width: 30rem) {
   .video-page2 .video-section {
-    background-position: left 20px bottom 100px, right 20px bottom 100px;
-    background-size: 70px 100px, 70px 100px;
-    max-width: 300px;
-    height: 300px;
+    margin-top: 24px;
   }
 }
-.video-page2 .video-section .demo-video {
-  position: absolute;
-  max-width: 100%;
-  height: auto;
-  position: relative;
-  overflow: hidden;
-  padding-left: 3.75rem;
-  padding-right: 3.75rem;
-  margin-top: 2rem;
+.video-page2 .video-section .video-container {
+  max-width: 1380px;
+  height: 774px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1600px) {
+  .video-page2 .video-section .video-container {
+    max-width: 1220px;
+  }
 }
 @media screen and (max-width: 80rem) {
-  .video-page2 .video-section .demo-video {
+  .video-page2 .video-section .video-container {
+    height: 562px;
     max-width: 1000px;
-    max-height: 407px;
-    margin-top: 2.5rem;
   }
 }
-@media screen and (max-width: 80rem) and (max-width: 64rem) {
-  .video-page2 .video-section .demo-video {
-    max-width: 504px;
-    max-height: 231px;
-    margin-top: 2.5rem;
+@media screen and (max-width: 1090px) {
+  .video-page2 .video-section .video-container {
+    max-width: 910px;
   }
 }
-@media screen and (max-width: 80rem) and (max-width: 30rem) {
-  .video-page2 .video-section .demo-video {
+@media screen and (max-width: 64rem) {
+  .video-page2 .video-section .video-container {
+    height: 365px;
+    max-width: 650px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .video-page2 .video-section .video-container {
+    max-width: 500px;
+    height: 281px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .video-page2 .video-section .video-container {
+    max-width: 490px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .video-page2 .video-section .video-container {
+    max-width: 410px;
+    height: 231px;
+  }
+}
+@media screen and (max-width: 30rem) {
+  .video-page2 .video-section .video-container {
     max-width: 262px;
-    max-height: 120px;
-    margin-top: 0.5rem;
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
+    height: 148px;
+  }
+}
+.video-page2 .video-section .video-container .demo-video {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 40px;
+}
+@media screen and (max-width: 80rem) {
+  .video-page2 .video-section .video-container .demo-video {
+    border-radius: 35px;
+    min-height: 408px;
+  }
+}
+@media screen and (max-width: 64rem) {
+  .video-page2 .video-section .video-container .demo-video {
+    border-radius: 25px;
+    min-height: 231px;
+  }
+}
+@media screen and (max-width: 30rem) {
+  .video-page2 .video-section .video-container .demo-video {
+    border-radius: 15px;
+    min-height: 121px;
   }
 }
 
 .download-app-page2 {
-  max-width: 1280px;
+  max-width: 1578px;
   height: 39.297rem;
-  margin: auto;
+  margin: 60px auto;
   overflow: visible;
   background-image: url(/img/chess-figure-group-left.svg), url(/img/chess-figure-group-right.svg);
   background-repeat: no-repeat;
-  background-position: left 30px bottom, right 30px bottom;
+  background-position: left 100px bottom, right 100px bottom;
 }
 @media screen and (max-width: 80rem) {
   .download-app-page2 {
     height: 21.5rem;
-    max-width: 1200px;
-    display: none;
+    max-width: 1218px;
+    margin: -90px auto 0;
+    background-repeat: no-repeat;
+    background-position: left 15px bottom 40px, right 15px bottom 40px;
+    background-size: 200px 310px, 200px 310px;
   }
 }
-.download-app-page2 .video-page-download {
-  margin-bottom: 3.75rem;
+@media screen and (max-width: 64rem) {
+  .download-app-page2 {
+    background-position: left 7px bottom 40px, right 7px bottom 40px;
+    background-size: 140px 200px, 140px 200px;
+    margin: -70px 0 0;
+    height: 240px;
+    max-width: 64rem;
+  }
+}
+@media screen and (max-width: 30rem) {
+  .download-app-page2 {
+    background-position: left 10px bottom 24px, right 5px bottom 24px;
+    background-size: 70px 100px, 70px 100px;
+    margin: -20px 0 0;
+    max-width: 30rem;
+    height: 120px;
+  }
+}
+@media screen and (max-width: 80rem) {
+  .download-app-page2 .video-page-download {
+    display: none;
+  }
 }
 .download-app-page2 .video-page-download .download-app-conteiner {
   max-width: 72.25rem;
@@ -1162,7 +1212,6 @@ footer .footer-container .footer-text a {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  margin-top: 3.75rem;
 }
 .download-app-page2 .video-page-download .download-app-conteiner h1 {
   color: #1d1e4a;
@@ -1361,17 +1410,19 @@ footer .footer-container .footer-text a {
   }
 }
 .section_about_project .text_section .see-more #second-part {
-  height: 0;
+  max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: height 0.5s ease, opacity 0.5s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s 2s;
 }
 .section_about_project .text_section .see-more #second-part.visible {
-  height: auto;
+  max-height: 1000px;
   opacity: 1;
+  visibility: visible;
+  transition: max-height 2s ease, opacity 2s ease, visibility 0s 0s;
 }
 .section_about_project .text_section .see-more .hidden {
-  display: none;
+  visibility: hidden;
 }
 .section_about_project .text_section .see-more button {
   width: 6.563rem;
@@ -1670,8 +1721,8 @@ header .burger-menu .menu-btn .menu-btn__burger::after {
   }
 }
 header .burger-menu .popup-conteiner {
-  width: 13.813rem;
-  height: 8.75rem;
+  width: 0;
+  height: 0;
   background-color: #9c86cd;
   display: flex;
   flex-direction: column;
@@ -1679,23 +1730,25 @@ header .burger-menu .popup-conteiner {
   justify-content: center;
   border-radius: 0.313rem;
   position: absolute;
-  display: none;
-  top: -8px;
-  right: 0;
+  visibility: hidden;
+  top: -8000px;
+  right: 300px;
   z-index: 1000;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 header .burger-menu .popup-conteiner.active {
+  width: 13.813rem;
   top: -8px;
+  right: 0;
+  height: 8.75rem;
+  visibility: visible;
+  transition: height 2s, visible 0s;
 }
 @media screen and (min-width: 30rem) {
-  header .burger-menu .popup-conteiner {
-    width: 16rem;
-    height: 12rem;
-    top: -25px;
-  }
   header .burger-menu .popup-conteiner.active {
     top: -25px;
+    width: 16rem;
+    height: 12rem;
   }
 }
 header .burger-menu .popup-conteiner .about_project {

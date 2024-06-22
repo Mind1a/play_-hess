@@ -75,8 +75,7 @@ const burgerMenu = document.querySelector(".popup-conteiner");
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 function handleBurgerMenuClick() {
-  burgerMenu.style.display = "flex";
-  // burgerMenu.classList.toggle("active");
+  burgerMenu.style.visibility = "visible"
   overlay.style.display = "block";
   burgerMenu.classList.toggle("active");
   body.classList.toggle("no-scroll");
@@ -84,10 +83,22 @@ function handleBurgerMenuClick() {
 
 // Function to handle pop up close event
 function handlePopUpClose() {
-  burgerMenu.style.display = "none";
+  burgerMenu.style.visibility = "hidden"
+  burgerMenu.classList.toggle("active");
   overlay.style.display = "none";
   body.classList.remove("no-scroll");
 }
+
+// handle overlay disappearing on screen size change
+window.addEventListener( 'resize' , () => {
+  if(window.innerWidth > 768){
+    overlay.style.display = "none";
+  } else if(burgerMenu.style.visibility == "visible"){
+    overlay.style.display = "block";
+  }
+})
+
+
 
 // Add event listeners
 document
@@ -139,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", function () {
     if (window.innerWidth >= 481) {
       resetText();
+      toggleText();
     }
   });
 
@@ -152,15 +164,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // Updates the footer text and hides the download-app-page2 and download-app sections based on the user's operating system.
 if (navigator.userAgent.indexOf("Windows") === -1) {
   const downloadSection = document.querySelector(".windows");
-  const downloadAppPage2 = document.querySelector(".download-app-page2");
+  const videoPageDownload = document.querySelector(".video-page-download");
   const downloadApp = document.querySelector(".download-app");
 
   // Update footer text for non-Windows users
   downloadSection.innerHTML = `<h3>აპლიკაციის ჩამოტვირთვა შესაძლებელია<span> მხოლოდ Windows კომპიუტერებზე</span></h3>`;
 
   // Hide download-app-page2 section
-  if (downloadAppPage2) {
-    downloadAppPage2.style.display = "none";
+  if(window.innerWidth <= 1280){
+
+    if (videoPageDownload) {
+      videoPageDownload.style.display = "none";
+    }
   }
 
   // Hide download-app section
