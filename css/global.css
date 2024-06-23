@@ -1413,13 +1413,13 @@ footer .footer-container .footer-text a {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s 2s;
+  transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0s 2s;
 }
 .section_about_project .text_section .see-more #second-part.visible {
   max-height: 1000px;
   opacity: 1;
   visibility: visible;
-  transition: max-height 2s ease, opacity 2s ease, visibility 0s 0s;
+  transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0s 0s;
 }
 .section_about_project .text_section .see-more .hidden {
   visibility: hidden;
@@ -1742,7 +1742,7 @@ header .burger-menu .popup-conteiner.active {
   right: 0;
   height: 8.75rem;
   visibility: visible;
-  transition: height 2s, visible 0s;
+  transition: height 0.5s, visible 0s;
 }
 @media screen and (min-width: 30rem) {
   header .burger-menu .popup-conteiner.active {

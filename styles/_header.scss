@@ -213,7 +213,7 @@ header {
         right: 0;
         height: 8.75rem;
         visibility: visible;
-        transition: height 2s , visible 0s;
+        transition: height 0.5s , visible 0s;
       }
 
       @media screen and (min-width: $mobile) {
