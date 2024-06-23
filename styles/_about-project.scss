@@ -111,13 +111,13 @@
         max-height: 0;
         opacity: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s 2s; 
+        transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0s 2s; 
 
         &.visible {
           max-height: 1000px;
           opacity: 1;
           visibility: visible;
-          transition: max-height 2s ease, opacity 2s ease, visibility 0s 0s; 
+          transition: max-height 0.5s ease, opacity 0.5s ease, visibility 0s 0s; 
         }
       }
 
