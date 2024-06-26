@@ -10,32 +10,59 @@ const swiper_for_img = new Swiper(".swiper-for-img", {
   },
 });
 
-const swiper = new Swiper(".swiper-workers-section", {
-  direction: "horizontal",
-  speed: 400,
-  spaceBetween: 10,
-  loop: true,
-  slidesPerView: 1,
+// fetching project working group data from json file
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("./data.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const container = document.getElementById("worker-container");
+      data.forEach((worker) => {
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide swiper-slide-workers-card";
 
-  navigation: {
-    nextEl: ".button-next",
-    prevEl: ".button-prev",
-  },
+        const name = document.createElement("p");
+        name.className = "worker-name";
+        name.textContent = worker.name;
 
-  breakpoints: {
-    600: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    1025: {
-      slidesPerView: 3,
-      spaceBetween: 30,
-    },
-  },
-});
+        const position = document.createElement("p");
+        position.textContent = worker.position;
 
-window.addEventListener("resize", function () {
-  swiper.update();
+        const linkedin = document.createElement("p");
+        linkedin.textContent = worker.linkedin;
+
+        slide.appendChild(name);
+        slide.appendChild(position);
+        slide.appendChild(linkedin);
+
+        container.appendChild(slide);
+      });
+
+      // addomg swiper after fetching data
+      const swiper = new Swiper(".swiper-workers-section", {
+        direction: "horizontal",
+        speed: 400,
+        spaceBetween: 10,
+        loop: true,
+        slidesPerView: 1,
+
+        navigation: {
+          nextEl: ".button-next",
+          prevEl: ".button-prev",
+        },
+
+        breakpoints: {
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1025: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+    })
+    .catch((error) => console.error("Error fetching data:", error));
 });
 
 // Global variable to keep track of the active page
@@ -75,7 +102,7 @@ const burgerMenu = document.querySelector(".popup-conteiner");
 const overlay = document.querySelector(".overlay");
 const body = document.querySelector("body");
 function handleBurgerMenuClick() {
-  burgerMenu.style.visibility = "visible"
+  burgerMenu.style.visibility = "visible";
   overlay.style.display = "block";
   burgerMenu.classList.toggle("active");
   body.classList.toggle("no-scroll");
@@ -83,22 +110,20 @@ function handleBurgerMenuClick() {
 
 // Function to handle pop up close event
 function handlePopUpClose() {
-  burgerMenu.style.visibility = "hidden"
+  burgerMenu.style.visibility = "hidden";
   burgerMenu.classList.toggle("active");
   overlay.style.display = "none";
   body.classList.remove("no-scroll");
 }
 
 // handle overlay disappearing on screen size change
-window.addEventListener( 'resize' , () => {
-  if(window.innerWidth > 768){
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
     overlay.style.display = "none";
-  } else if(burgerMenu.style.visibility == "visible"){
+  } else if (burgerMenu.style.visibility == "visible") {
     overlay.style.display = "block";
   }
-})
-
-
+});
 
 // Add event listeners
 document
@@ -171,8 +196,7 @@ if (navigator.userAgent.indexOf("Windows") === -1) {
   downloadSection.innerHTML = `<h3>აპლიკაციის ჩამოტვირთვა შესაძლებელია<span> მხოლოდ Windows კომპიუტერებზე</span></h3>`;
 
   // Hide download-app-page2 section
-  if(window.innerWidth <= 1280){
-
+  if (window.innerWidth <= 1280) {
     if (videoPageDownload) {
       videoPageDownload.style.display = "none";
     }
